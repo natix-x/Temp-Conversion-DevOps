@@ -14,7 +14,7 @@ def covert_fahrenheit_to_celsius(fahrenheit_temp):
     return (fahrenheit_temp - 32) * (5 / 9)
 
 
-@app.route("/convert/", methods=["POST"])
+@app.route("/convert/", methods=["POST", "GET"])
 def covert_temperature():
     """
     converts Fahrenheit temperature to  Celsius temperature,
@@ -40,4 +40,4 @@ def covert_temperature():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5000, host="0.0.0.0")
