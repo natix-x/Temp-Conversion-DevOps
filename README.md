@@ -20,7 +20,7 @@ The aim of this project is to create a comprehensive environment for a web appli
 Testing parameters are shown below:
 Got the statistics files from testing in cvs format and attach them to [results directory](results)
 5. Using TensorFlow Serving served a computational graph converting Fahrenheit temperature to Celsius. The graph in a TF SavedModel format is provided [here](tensorflow_model). Push created locally DockerImage into [DockerHub](https://hub.docker.com/repository/docker/natix02/tensor-flow-model-temp-convert/general)
-6. 
+6. Creation of a helm chart to deploy TFModel in the Kubernetes environment.
 ### Requirements
 docker, Minikube
 ### Setup
@@ -60,3 +60,8 @@ If you are Apple macOS or Microsoft Windows user make sure you have Docker Deskt
       kubectl uninstall app
       kubectl uninstall locust
       ```
+6. If you want to further explore tensorflow solution:
+    * go to k8s/tfmodel and install tf-model-chart:
+   ```sh
+      helm install tfmodel .
+    ```
