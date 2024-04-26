@@ -19,6 +19,8 @@ The aim of this project is to create a comprehensive environment for a web appli
 4. Usage of a locust as a client for my app. Building a [docker image](https://hub.docker.com/repository/docker/natix02/temp-conversion-load-test/general) and a helm chart to run a performance test at the k8s cluster. Running the client for 5 minutes.
 Testing parameters are shown below:
 Got the statistics files from testing in cvs format and attach them to [results directory](results)
+5. Using TensorFlow Serving served a computational graph converting Fahrenheit temperature to Celsius. The graph in a TF SavedModel format is provided [here](tensorflow_model). Push created locally DockerImage into [DockerHub](https://hub.docker.com/repository/docker/natix02/tensor-flow-model-temp-convert/general)
+6. 
 ### Requirements
 docker, Minikube
 ### Setup
@@ -36,20 +38,25 @@ If you are Apple macOS or Microsoft Windows user make sure you have Docker Deskt
    helm install app .
    ```
 4. For running test using locust as a client go to k8s//locust:
-* install locust helm chart
+   * install locust helm chart
+       ```sh
+      helm install locust .
+       ```
+   * get pods names
+      ```sh
+      kubectl get pods
+      ```
+   * get app address
+      ```sh
+      kubectl logs [app-pod-id]
+      ```
+   * get locust url 
+      ```sh
+      minikube service my-locust --url
+      ```
+    And on that url you can run your own tests by setting parameters you want and inserting host as app address from previous step.
+5. If you are done working with app or locust just uninstall used helm charts:
     ```sh
-   helm install locust .
-    ```
-* get pods names
-   ```sh
-   kubectl get pods
-   ```
-* get app address
-   ```sh
-   kubectl logs [app-pod-id]
-   ```
-* get locust url 
-   ```sh
-   minikube service my-locust --url
-   ```
-And on that url you can run your own tests by setting parameters you want and inserting host as app address from previous step.
+      kubectl uninstall app
+      kubectl uninstall locust
+      ```
