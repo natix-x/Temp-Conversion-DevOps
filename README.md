@@ -11,7 +11,7 @@
 The aim of this project is to create a comprehensive environment for a web application based on DevOps principles.
 ### Project structure
 ### Project architecture 
-![img.png](images/img.png)
+![img.png](images/project_architecture.png)
 ### Steps and used technologies
 1. Creation of backend server that uses HTTP protocol and response with calculated Celsius temperature based on Fahrenheit temperature -> Python 3.11+, Flask
 2. Creation of a docker image to run the application and push it to public repository on DockerHub: [Temp-conversion-flask-app](https://hub.docker.com/repository/docker/natix02/temp-convert-flask-app/general)
