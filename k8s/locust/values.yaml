@@ -1,0 +1,8 @@
+image:
+  repository: 'natix02/temp-conversion-load-test'
+  tag: '1.0'
+  pullPolicy: IfNotPresent
+testDuration: 5m
+labels:
+  locust:
+    name: my-locust
