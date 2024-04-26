@@ -1,0 +1,8 @@
+image:
+  repository: 'natix02/tensor-flow-temp-conversion-load-test'
+  tag: '1.0'
+  pullPolicy: IfNotPresent
+testDuration: 5m
+labels:
+  locust:
+    name: my-locust-tfmodel

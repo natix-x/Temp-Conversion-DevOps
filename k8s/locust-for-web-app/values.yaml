@@ -5,4 +5,4 @@ image:
 testDuration: 5m
 labels:
   locust:
-    name: my-locust
+    name: my-locust-web-app
